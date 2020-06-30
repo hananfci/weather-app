@@ -2,7 +2,7 @@
 // Base URL and API Key for OpenWeatherMap API
 
 let baseURL= 'https://api.openweathermap.org/data/2.5/weather?zip='
-let apiKey = '&appid=29ea0317bb4ce46cf4c77e178208986d&units=imperial';
+const apiKey = '&appid=29ea0317bb4ce46cf4c77e178208986d&units=imperial';
 
 // Create a new date instance dynamically with JS
 let d = new Date();
