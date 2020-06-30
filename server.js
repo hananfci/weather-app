@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-const appData = {};
+let projectData = {};
  // Express to run server and routes
 const express = require('express');
 
@@ -31,7 +31,7 @@ const server = app.listen(port, ()=>{console.log(`running on localhost: ${port}`
   app.get('/all', allData)
 
   function allData( req,res){
-      res.send(appData)
+      res.send(projectData)
 
   }
 
@@ -47,7 +47,7 @@ function addweatherinfo(req,res){
     content : req.body.content
   }
 
-  appData = newWeather; 
-  res.send(appData)
+  projectData = newWeather; 
+  res.send(projectData)
   console.log(newWeather)
 }
