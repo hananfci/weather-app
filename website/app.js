@@ -2,14 +2,14 @@
 // Base URL and API Key for OpenWeatherMap API
 
 const baseURL= 'https://api.openweathermap.org/data/2.5/weather?zip='
-const apiKey = '&appid=29ea0317bb4ce46cf4c77e178208986d';
+const apiKey = '&appid=29ea0317bb4ce46cf4c77e178208986d&units=imperial';
 
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 
-ocument.getElementById('generate').addEventListener('click', performAction);
+document.getElementById('generate').addEventListener('click', performAction);
 
 function performAction(e){
   e.preventDefault();
@@ -43,9 +43,9 @@ const getweatherinfo = async (baseURL, zipcode, apiKey)=>{
   const request = await fetch('/all');
   try{
     const allData = await request.json();
-    document.getElementById('date').innerHTML = allData[0].date;
-    document.getElementById('temp').innerHTML = allData[0].temp;
-    document.getElementById('content').innerHTML = allData[0].content;
+    document.getElementById('date').innerHTML = allData.date;
+    document.getElementById('temp').innerHTML = allData.temp;
+    document.getElementById('content').innerHTML = allData.content;
 
   }catch(error){
     console.log("error", error);
